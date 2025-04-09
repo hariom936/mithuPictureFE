@@ -29,8 +29,8 @@ const Signup: React.FC = () => {
         password: parseInt(formData.password),
       });
 
-      if (response.data.responseCode === 201 || response.data.success) {
-        navigate('/'); // redirect to login after signup
+      if (response.status === 200 || response.data.responseCode === 201 || response.data.success) {
+        navigate(API_ENDPOINTS.login);
       }
     } catch (error: any) {
       console.error('Signup failed:', error.response?.data || error.message);
