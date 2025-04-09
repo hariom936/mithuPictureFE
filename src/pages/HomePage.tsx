@@ -5,7 +5,7 @@ import { Paper } from '@mui/material';
 // import './HomePage.css';
 
 const HomePage = () => {
-  const [showSignup, setShowSignup] = useState(false);
+  const [showSignup] = useState(false);
 
   return (
     <div className="home-container">
