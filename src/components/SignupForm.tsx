@@ -15,10 +15,7 @@ const Signup: React.FC = () => {
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSignup = async () => {
@@ -30,7 +27,7 @@ const Signup: React.FC = () => {
       });
 
       if (response.status === 200 || response.data.responseCode === 201 || response.data.success) {
-        navigate(API_ENDPOINTS.login);
+        navigate('/'); // Redirect to login or homepage
       }
     } catch (error: any) {
       console.error('Signup failed:', error.response?.data || error.message);
